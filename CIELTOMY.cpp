@@ -1,0 +1,66 @@
+#include<bits/stdc++.h>
+#define endl "\n"
+#define lli long long int
+#define ll long long
+#define F  first;
+#define S  second;
+#define pb  push_back;
+
+using namespace std;
+
+using vi = vector<int>;
+using vvi = vector<vi>;
+
+
+inline void cp() {
+
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL); cout.tie(NULL);
+#ifndef ONLINE_JUDGE
+	freopen("inputf.in", "r", stdin);
+	freopen("outputf.in", "w", stdout);
+#endif
+
+}
+
+const int mod = 1e9 + 7;
+
+
+int cnt=0;
+
+void dfs(){
+
+
+
+
+}
+
+int main()
+{
+
+	cp();
+	int t; cin >> t;
+	while (t--) {
+
+		int n, m; cin >> n >> m;
+
+		unordered_map<int, vector<pair<int, int>>>l;
+
+		for (int i = 1; i <= m; i++) {
+
+			int u, v, w; cin >> u >> v >> w;
+			l[u].push_back( make_pair(v, w));
+			l[v].push_back( make_pair(u, w));
+
+		}
+
+
+		dfs()
+
+
+	}
+
+
+
+	return 0;
+}
