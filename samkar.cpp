@@ -16,21 +16,15 @@ using vvi = vector<vi>;
 
 const int mod = 1e9 + 7;
 
-void solve() {
-
-
-
-}
 
 int main()
 {
 
-
-	int t = 1; cin >> t;
-	while (t--) {
-		solve();
-
+	int t=1;cin>>t;
+	while(t--){
+		int x;cin>>x;
+		cout<<x<<endl;
 	}
-
+	
 	return 0;
 }

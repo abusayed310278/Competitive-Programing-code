@@ -18,20 +18,28 @@ const int mod = 1e9 + 7;
 
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	double d,u; cin >> d>>u;
+	int n; cin >>n;
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
-	} else {
-		ans = 0;
+	double mini = u * d;
+	int idx = 0;
+	for (int i = 1; i <= n; i++) {
+
+		int m; cin >> m;
+		double r; cin >> r;
+		double c; cin >> c;
+
+		double cur = (u * r + (c / m)) ;
+		if (cur < mini) {
+			idx = i;
+			mini = cur;
+		}
+
+
 	}
 
-	cout <<fixed<< setprecision(6) << ans << endl;
+	cout << idx << endl;
+
 
 }
 

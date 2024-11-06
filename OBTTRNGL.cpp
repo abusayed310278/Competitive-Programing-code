@@ -18,20 +18,16 @@ const int mod = 1e9 + 7;
 
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	int k, a, b; cin >> k >> a >> b;
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
+	if (k % 2 == 0 and abs(a - b) == k / 2) {
+		cout << 0 << endl;
 	} else {
-		ans = 0;
-	}
 
-	cout <<fixed<< setprecision(6) << ans << endl;
+		int d = abs(a - b);
+		int ans = min(d - 1, k - d - 1);
+		cout << ans << endl;
+	}
 
 }
 

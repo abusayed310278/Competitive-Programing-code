@@ -18,20 +18,24 @@ const int mod = 1e9 + 7;
 
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	int n, x, k; cin >> n >> x >> k;
+	vi a(n), b(n);
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
-	} else {
-		ans = 0;
+	for (int i = 0; i < n; i++)cin >> a[i];
+	for (int i = 0; i < n; i++)cin >> b[i];
+
+
+	int c = 0;
+	for (int i = 0; i < n; i++) {
+
+		int d = abs(a[i] - b[i]);
+		if (d <= k) {
+			c++;
+		}
 	}
 
-	cout <<fixed<< setprecision(6) << ans << endl;
+	cout << (c >= x ? "YES" : "NO") << endl;
+
 
 }
 

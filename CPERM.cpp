@@ -16,22 +16,33 @@ using vvi = vector<vi>;
 
 const int mod = 1e9 + 7;
 
-void solve() {
+ll power(ll a, ll b) {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
-
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
-	} else {
-		ans = 0;
+	if (b == 0) {
+		return 1;
 	}
 
-	cout <<fixed<< setprecision(6) << ans << endl;
+	ll res = power(a, b / 2);
+	if (b & 1) {
+		return (res * res * a) % mod;
+	} else {
+		return (res * res) % mod;
+	}
+
+}
+
+void solve() {
+
+	int n; cin >> n;
+
+	if (n == 1) {
+		cout << 0 << endl;
+		return;
+	}
+
+
+
+	cout << (( power(2, n - 1) - 2) + mod) % mod << endl;
 
 }
 

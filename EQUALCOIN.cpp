@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 #define endl "\n"
-#define lli long long int
+#define int long long int
 #define ll long long
 #define l long
 #define F  first
@@ -18,24 +18,17 @@ const int mod = 1e9 + 7;
 
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	int x, y; cin >> x >> y;
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
+	if (x % 2 == 0 && (y % 2 == 0 || x > 0)) {
+		cout << "YES\n";
 	} else {
-		ans = 0;
+		cout << "NO\n";
 	}
-
-	cout <<fixed<< setprecision(6) << ans << endl;
 
 }
 
-int main()
+int32_t main()
 {
 
 

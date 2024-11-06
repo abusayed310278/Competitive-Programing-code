@@ -18,20 +18,12 @@ const int mod = 1e9 + 7;
 
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	int n; cin >> n;
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
-	} else {
-		ans = 0;
-	}
+	int a = 1, b = 1, c;
 
-	cout <<fixed<< setprecision(6) << ans << endl;
+	c = n - 2;
+	cout << a << " " << b << " " << c << endl;
 
 }
 

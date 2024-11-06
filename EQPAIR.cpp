@@ -16,22 +16,27 @@ using vvi = vector<vi>;
 
 const int mod = 1e9 + 7;
 
+
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	int n; cin >> n;
+	unordered_map<int, int>m;
+	for (int i = 0; i < n; i++) {
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
-	} else {
-		ans = 0;
+		int x; cin >> x;
+		m[x]++;
 	}
 
-	cout <<fixed<< setprecision(6) << ans << endl;
+	lli ans = 0;
+
+	for (auto x : m) {
+
+		lli y = x.S;
+
+		ans += 1LL * y * (y - 1) / 2;
+	}
+
+	cout << ans << endl;
 
 }
 

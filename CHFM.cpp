@@ -18,20 +18,33 @@ const int mod = 1e9 + 7;
 
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	int n; cin >> n;
+	vector<double> a(n);
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
-	} else {
-		ans = 0;
+	double sum = 0;
+	for (int i = 0; i < n; i++) {
+		cin >> a[i];
+		sum += a[i];
 	}
 
-	cout <<fixed<< setprecision(6) << ans << endl;
+	double mean = (sum / n);
+
+
+
+	for (auto x : a) {
+
+		if (x == mean) {
+			mini = min(mini, x);
+		}
+
+	}
+
+	if (flag == INT_MAX) {
+		cout << "Impossible" << endl;
+	} else {
+		cout << mini << endl;
+	}
+
 
 }
 

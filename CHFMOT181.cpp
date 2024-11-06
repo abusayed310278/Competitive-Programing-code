@@ -16,22 +16,24 @@ using vvi = vector<vi>;
 
 const int mod = 1e9 + 7;
 
+
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	int n, s; cin >> s >> n;
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
-	} else {
-		ans = 0;
+	int count = 0;
+	if (s % 2) count++, s--;
+	while (s)
+	{
+		count += (s / n);
+		if (s < n)
+		{
+			count++;
+			break;
+		}
+		s = s % n;
 	}
-
-	cout <<fixed<< setprecision(6) << ans << endl;
+	cout << count << endl;
 
 }
 

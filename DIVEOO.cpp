@@ -18,6 +18,10 @@ const int mod = 1e9 + 7;
 
 void solve() {
 
+    int n, a, b; cin >> n >> a >> b;
+
+    cout << n << " " << a << " " << b << endl;
+
 
 
 }
@@ -25,12 +29,13 @@ void solve() {
 int main()
 {
 
+    int t = 1; cin >> t;
 
-	int t = 1; cin >> t;
-	while (t--) {
-		solve();
+    while (t--) {
 
-	}
+        solve();
 
-	return 0;
+    }
+
+    return 0;
 }

@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 #define endl "\n"
-#define int long long int
+#define int long long
 #define ll long long
 #define F  first
 #define S  second
@@ -33,8 +33,33 @@ void solve()
 
 	int n, e, h, a, b, c; cin >> n >> e >> h >> a >> b >> c;
 
-	
+	int ans = 1e18;
 
+	for (int cake = 0; cake <= n; cake++) {
+
+		if (e < cake || h < cake)break;
+
+		int o = (e - cake) / 2;
+		int m = (h - cake) / 3;
+
+		if (cake + o + m < n)continue;
+
+		int oreq, mreq;
+		if (a < b) {
+			oreq = min(o, n - cake);
+			mreq = n - cake - oreq;
+		} else {
+			mreq = min(m, n - cake);
+			oreq = n - cake - mreq;
+		}
+
+
+		int price = cake * c + oreq * a + mreq * b;
+
+		ans = min(ans, price);
+	}
+
+	if (ans == 1e18)cout << -1 << endl; else cout << ans << endl;
 
 }
 

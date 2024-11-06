@@ -16,21 +16,18 @@ using vvi = vector<vi>;
 
 const int mod = 1e9 + 7;
 
-void solve() {
-
-
-
-}
-
 int main()
 {
-
-
-	int t = 1; cin >> t;
+	int t; cin >> t;
+	int a, b, c, p, q, r;
+	int cnt = 0;
 	while (t--) {
-		solve();
+		cin >> a >> b >> c;
 
+		cin >> p >> q >> r;
+
+		bool ans = max({p + b + c, a + q + c, a + b + r}) > (p + q + r) / 2;
+		cout << (ans ? "YEs" : "No") << endl;
+		cnt += ans;
 	}
-
-	return 0;
 }

@@ -12,43 +12,26 @@ using vi = vector<int>;
 using vvi = vector<vi>;
 
 
-inline void cp() {
 
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL); cout.tie(NULL);
-#ifndef ONLINE_JUDGE
-	freopen("inputf.in", "r", stdin);
-	freopen("outputf.in", "w", stdout);
-#endif
-
-}
 
 const int mod = 1e9 + 7;
 
 
 void solve() {
 
-	int n, i, k; cin >> n >> i >> k;
 
-	int ind = i % k;
-	int ex = n % k;
+	ll n, p, k;	cin >> n >> p >> k;
 
+	ll seg = n / k;
+	ll desire = p % k;
+	ll  rem = n % k;
 	ll ans = 0;
-
-	if (ind > 0) {
-		int p = n / k;
-		ans += p * ind;
-
-		if (ex > 0) {
-			ans += min(ex, ind);
-		}
-
-	}
-
-	i++;
-	ans += (i + k - 1) / k;
+	ans += (desire * seg);
+	ans += p / k + 1;
+	ans += min(rem, desire);
 
 	cout << ans << endl;
+
 
 }
 
@@ -58,7 +41,7 @@ int main()
 {
 
 
-	cp();
+
 	int t = 1; cin >> t;
 	while (t--) {
 

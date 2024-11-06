@@ -18,20 +18,18 @@ const int mod = 1e9 + 7;
 
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	int x, h; cin >> x >> h;
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
-	} else {
-		ans = 0;
+	int moves = 0, d = 0;
+
+	while (d < h) {
+
+		if (d < 5)d += (int)x / 2; else d += x;
+
+		moves++;
 	}
 
-	cout <<fixed<< setprecision(6) << ans << endl;
+	cout << moves << endl;
 
 }
 
@@ -41,6 +39,7 @@ int main()
 
 	int t = 1; cin >> t;
 	while (t--) {
+
 		solve();
 
 	}

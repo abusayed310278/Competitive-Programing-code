@@ -16,22 +16,15 @@ using vvi = vector<vi>;
 
 const int mod = 1e9 + 7;
 
+
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
-
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
+	int n; cin >> n;
+	if (n <= 4) {
+		cout << 0 << " " << n << endl;
 	} else {
-		ans = 0;
+		cout << 1 << " " << n - 1 << endl;
 	}
-
-	cout <<fixed<< setprecision(6) << ans << endl;
 
 }
 

@@ -1,8 +1,7 @@
 #include<bits/stdc++.h>
 #define endl "\n"
-#define lli long long int
+#define int long long int
 #define ll long long
-#define l long
 #define F  first
 #define S  second
 #define pb  push_back
@@ -18,24 +17,27 @@ const int mod = 1e9 + 7;
 
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	int a, b, n; cin >> a >> b >> n;
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
-	} else {
-		ans = 0;
+	int ans = INT_MAX;
+	for (int i = n; i >= 1; i--) {
+
+		int l = (a * i) / __gcd(a, i);
+
+		if (l < n)break;
+
+
+		ans = min(ans, l);
+
+
+
 	}
 
-	cout <<fixed<< setprecision(6) << ans << endl;
+	cout << ans << endl;
 
 }
 
-int main()
+int32_t main()
 {
 
 

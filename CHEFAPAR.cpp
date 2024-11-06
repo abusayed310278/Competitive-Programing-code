@@ -18,20 +18,18 @@ const int mod = 1e9 + 7;
 
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	int n; cin >> n;
+	int cost = 0, zero = n + 1;
+	for (int i = 1; i <= n; i++) {
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
-	} else {
-		ans = 0;
+		int x; cin >> x;
+		if (x == 0) {
+			zero = min(i, zero);
+			cost += 1000;
+		}
 	}
 
-	cout <<fixed<< setprecision(6) << ans << endl;
+	cout << cost + (n - zero + 1) * 100 << endl;
 
 }
 

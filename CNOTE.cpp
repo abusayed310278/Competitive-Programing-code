@@ -16,22 +16,26 @@ using vvi = vector<vi>;
 
 const int mod = 1e9 + 7;
 
+int p[111111];
+int c[111111];
+
 void solve() {
 
-	ll ds, dt, d; cin >> ds >> dt >> d;
-	ll ans;
+	int x, y, k, n; cin >> x >> y >> k >> n;
+	int need = x - y;
 
-	if (d > ds + dt) {
-		ans = d - (ds + dt);
-	} else if (ds > d + dt) {
-		ans = ds - (d + dt);
-	} else if (dt > d + ds) {
-		ans = dt - (d + ds);
-	} else {
-		ans = 0;
+
+	bool flag = false;
+	for (int i = 0; i < n; i++) {
+		cin >> p[i] >> c[i];
 	}
-
-	cout <<fixed<< setprecision(6) << ans << endl;
+	for (int i = 0; i < n; i++) {
+		if (p[i] >= x - y && c[i] <= k) {
+			flag = true;
+			break;
+		}
+	}
+	cout << (flag ? "LuckyChef" : "UnluckyChef") << '\n';
 
 }
 
